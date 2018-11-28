@@ -188,19 +188,17 @@ $(function(){
                 var e;
                 	for (e in a){
 					if (a.hasOwnProperty(e)) {
-                    t+="product["+e+"]="+a[e].count+"&";
+                    t+="products["+e+"]="+a[e].count+"&";
                     }
                     }
                 t=t.substring(0,t.length-1);
-               let k=("token=322&"+b.serialize()).replace(new RegExp("address=" + d.trim(d("[name=address]", b).val()) + "&comment="+d.trim(d("[name=comment]", b).val())), '')
+               let k=("token=-YollNrxbx-44D3umaqA&"+b.serialize()).replace(new RegExp("address=" + d.trim(d("[name=address]", b).val()) + "&comment="+d.trim(d("[name=comment]", b).val())), '')
                 k+=t;
 				d.ajax({
                     url:  'https://nit.tron.net.ua/api/order/add',
 					type: "post",
                     data: k ,
-					success: (function() {
-                        console.log("Запрос успешно отправился на https://nit.tron.net.ua/api/order/add." + "Содержимое: " +k);
-                    }),
+					success: function(res) { console.log(res)},
                     error: function() {}
 				});
 			},
