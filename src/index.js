@@ -32,6 +32,7 @@ $(document).ready(function() {
 			$(".product_view").html('');
 			var id = this.id;
             if(this.id=="1All"){
+                console.log("all");
                  api= 'http://nit.tron.net.ua/api/product/list'
             }else{
                   api='http://nit.tron.net.ua/api/product/list/category/'+ parseInt(id, 10);
