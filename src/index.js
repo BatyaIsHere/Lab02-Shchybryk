@@ -20,7 +20,9 @@ jQuery.ajax({
 	},
 });
 $(document).ready(function() {
+   $('#categories').append(_categoryHTML({id: "1", name: "All", description: "All products"}))
 	$.getJSON('https://nit.tron.net.ua/api/category/list', function(data) {
+         
 		data.forEach((category) => {
 			$('#categories').append(_categoryHTML(category));
 		});
