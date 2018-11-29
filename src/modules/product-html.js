@@ -10,8 +10,8 @@ let _productHTML=({
 	$product.append($(`<img src="${image_url}" alt="${name}" class="img-fluid product-image">`));
 	$product.append($(`<span class="product-title mx-auto">`).text(name));
 	if(special_price) {
-		$product.append($(`<s class="mx-auto product-price">`).text(price));
-		$product.append($(`<span class="mx-auto product-special-price">`).text(special_price));
+		$product.append($(`<s class="mx-auto product-price">`).text("Стара ціна: " + price));
+		$product.append($(`<span class="mx-auto product-special-price">`).text("Ціна: " + special_price));
         
         
         $product.append($(`<button type="button" class="btn button bg-success product-buy  add_item" data-id='${id}' data-title="${name}" data-img="${image_url}" data-price="${special_price}">`).text("До кошику"));

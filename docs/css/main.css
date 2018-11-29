@@ -13019,3 +13019,6 @@ a.text-dark:hover, a.text-dark:focus {
   text-decoration: underline;
   text-decoration-color: white; }
 
+.row {
+  font-weight: 700; }
+
