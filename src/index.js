@@ -27,10 +27,16 @@ $(document).ready(function() {
 			$('#categories').append(_categoryHTML(category));
 		});
 		$('p.load').on('click', function() {
-			$(".product_item").html('');
+            let api;
+            $(".product_item").html('');
 			$(".product_view").html('');
 			var id = this.id;
-			$.getJSON('http://nit.tron.net.ua/api/product/list/category/' + parseInt(id, 10), function(data) {
+            if(this.id=="1All"){
+                 api= 'http://nit.tron.net.ua/api/product/list'
+            }else{
+                  api='http://nit.tron.net.ua/api/product/list/category/'+ parseInt(id, 10);
+            }
+			$.getJSON(api, function(data) {
 				data.forEach((product) => {
 					console.log("in for");
 					let $productHTML = _productHTML(product);
