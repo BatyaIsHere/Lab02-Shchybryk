@@ -31,8 +31,7 @@ $(document).ready(function() {
             $(".product_item").html('');
 			$(".product_view").html('');
 			var id = this.id;
-            if(this.id=="1All"){
-                console.log("all");
+            if(id=="1All"){
                  api= 'http://nit.tron.net.ua/api/product/list'
             }else{
                   api='http://nit.tron.net.ua/api/product/list/category/'+ parseInt(id, 10);
