@@ -32,13 +32,12 @@ $(document).ready(function() {
 			$(".product_view").html('');
 			var id = this.id;
             if(id=="1All"){
-                 api= 'http://nit.tron.net.ua/api/product/list'
+                 api= 'https://nit.tron.net.ua/api/product/list'
             }else{
-                  api='http://nit.tron.net.ua/api/product/list/category/'+ parseInt(id, 10);
+                  api='https://nit.tron.net.ua/api/product/list/category/'+ parseInt(id, 10);
             }
 			$.getJSON(api, function(data) {
 				data.forEach((product) => {
-					console.log("in for");
 					let $productHTML = _productHTML(product);
 					$('.product_item').append($productHTML);
 				});
@@ -54,7 +53,7 @@ $(document).on('click', '.card', function() {
 	var id = $this.closest('.card').data('product-id');
 	$(".product_item").html('');
 	$(".product_view").html('');
-	$.getJSON('http://nit.tron.net.ua/api/product/' + id, function(data) {
+	$.getJSON('https://nit.tron.net.ua/api/product/' + id, function(data) {
 		let $itemDescription = _item_description(data);
 		$('.product_view').append($itemDescription);
 		$('.product_view').append($itemDescription);
